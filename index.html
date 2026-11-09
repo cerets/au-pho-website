@@ -1,0 +1,1176 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#173d32">
+<meta name="description" content="AU PHO - Restoran makanan khas Vietnam dengan sentuhan modern dan elegan.">
+<title>AU PHO | Vietnamese Dining</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+ --green:#173d32;
+ --dark:#102c25;
+ --cream:#f7f3e9;
+ --gold:#c9a66b;
+ --text:#26342e;
+}
+
+* {box-sizing:border-box;margin:0;padding:0}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+body {
+ font-family:'DM Sans',sans-serif;
+ background:var(--cream);
+ color:var(--text);
+}
+
+a {text-decoration:none;color:inherit}
+
+.container {
+ width:90%;
+ max-width:1150px;
+ margin:auto;
+}
+
+/* NAVIGATION */
+
+nav {
+ position:fixed;
+ width:100%;
+ top:0;
+ z-index:100;
+ background:rgba(16,44,37,.96);
+ color:white;
+}
+
+.navbar {
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ padding:18px 0;
+}
+
+.logo {
+ font:700 29px 'Playfair Display',serif;
+ letter-spacing:5px;
+ color:var(--gold);
+}
+
+  .logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo img {
+  height: 75px;
+  width: 75px;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 5px;
+}
+
+.logo-text span,
+.logo-text small {
+  text-align: left;
+}
+
+.logo-text span {
+  color: #c9a66b;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.logo-text small {
+  color: #c9a66b;
+  font-size: 10px;
+  letter-spacing: 3px;
+}  
+
+  
+  .logo img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.logo span {
+ display:block;
+ font:9px 'DM Sans',sans-serif;
+ letter-spacing:3px;
+ text-align:center;
+ color:white;
+}
+
+.nav-links {
+ display:flex;
+ gap:28px;
+ list-style:none;
+}
+
+.nav-links a {
+ font-size:12px;
+ text-transform:uppercase;
+ letter-spacing:1px;
+}
+
+.nav-links a:hover {color:var(--gold)}
+
+.menu-toggle {
+ display:none;
+ background:none;
+ color:white;
+ border:1px solid white;
+ padding:8px 12px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 680px;
+  height: 82vh;
+  display: flex;
+  align-items: center;
+  color: white;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(10,36,29,.96) 0%,
+      rgba(10,36,29,.75) 45%,
+      rgba(10,36,29,.30) 100%
+    ),
+    url('heropic.jpg');
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+  /* DESKTOP */
+@media (min-width: 1440px) {
+  .hero {
+    height: 80vh;
+    min-height: 700px;
+  }
+
+  .hero-content {
+    max-width: 1300px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 650px;
+    height: 85vh;
+    background-position: center center;
+  }
+
+  .hero-content {
+    width: 90%;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px, 10vw, 58px);
+  }
+}
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity 1s ease,
+    transform 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+  
+/* TABLET DAN HP */
+@media (max-width: 767px) {
+  .hero {
+    background-attachment: scroll;
+  }
+}
+
+.hero-content {
+  width: 90%;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(58px, 7vw, 110px);
+  font-weight: 700;
+  line-height: 1.03;
+  margin: 22px 0;
+  max-width: 1000px;
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.8;
+  color: #eee;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: clamp(20px, 3vw, 30px);
+  padding: clamp(12px, 1.2vw, 15px) clamp(22px, 2.5vw, 30px);
+  background: var(--gold);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: clamp(10px, 0.85vw, 12px);
+  letter-spacing: 2px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: clamp(2px, 0.35vw, 4px);
+  font-size: clamp(10px, 0.8vw, 13px);
+}
+
+
+
+  
+/* SECTION */
+
+section {padding:100px 0}
+
+.section-title {
+ text-align:center;
+ margin-bottom:55px;
+}
+
+.section-title span {
+ color:#a17c46;
+ font-size:11px;
+ letter-spacing:4px;
+ text-transform:uppercase;
+}
+
+.section-title h2 {
+ font:600 48px 'Playfair Display',serif;
+ color:var(--green);
+ margin:15px 0;
+}
+
+.section-title p {
+ color:#e4b54b;
+ font-size:14px;
+ line-height:1.8;
+}
+
+/* ABOUT */
+
+#about {
+  background: linear-gradient(
+    135deg,
+    #102c25 0%,
+    #173d32 45%,
+    #244b3c 75%,
+    #102c25 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+.about-grid {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:60px;
+ align-items:center;
+}
+
+.about-image img {
+ width:100%;
+ height:480px;
+ object-fit:cover;
+}
+
+.about-text h2 {
+ font:600 45px 'Playfair Display',serif;
+ color:var(--cream);
+ margin:20px 0;
+}
+
+.about-text p {
+ font-size:14px;
+ color:#8a8484;
+ line-height:2;
+ margin-bottom:15px;
+}
+
+  /* ABOUT CENTER */
+.about-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.about-text {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text .eyebrow {
+  text-align: center;
+}
+
+.about-text h2 {
+  text-align: center;
+}
+
+.about-text p {
+  max-width: 750px;
+  margin: 20px auto;
+  text-align: center;
+  line-height: 1.9;
+}
+
+/* MENU */
+
+.menu-section {background:#eee9dd}
+
+.menu-grid {
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:25px;
+}
+
+.menu-card {
+ background:white;
+ overflow:hidden;
+ transition:.3s;
+}
+
+.menu-card:hover {
+ transform:translateY(-8px);
+ box-shadow:0 15px 30px #0001;
+}
+
+.menu-card img {
+ width:100%;
+ height:240px;
+ object-fit:cover;
+}
+
+.menu-info {padding:25px}
+
+.menu-info h3 {
+ font:600 24px 'Playfair Display',serif;
+ color:var(--green);
+ margin-bottom:12px;
+}
+
+.menu-info p {
+ color:#777;
+ font-size:13px;
+ line-height:1.8;
+}
+
+/* EXPERIENCE */
+
+.experience {
+ background:var(--green);
+ color:white;
+ text-align:center;
+}
+
+.experience h2 {
+ font:600 45px 'Playfair Display',serif;
+ margin:20px 0;
+}
+
+.experience p {
+ max-width:650px;
+ margin:auto;
+ line-height:2;
+ color:#8a8484;
+}
+
+
+  #reviews {
+  background: #f7f3e9;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.review-slider {
+  position: relative;
+  max-width: 850px;
+  height: 420px;
+  margin: 50px auto 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.review-card {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  background: #fff;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.review-card.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.review-card img {
+  width: 45%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review-content {
+  flex: 1;
+  padding: 45px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.review-stars {
+  color: #c9a66b;
+  letter-spacing: 5px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.review-content h3 {
+  font-family: 'Playfair Display', serif;
+  color: #173d32;
+  font-size: 25px;
+  margin-bottom: 15px;
+}
+
+.review-content p {
+  color: #666;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.review-dots {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 25px;
+}
+
+.review-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c9c9c9;
+  transition: .3s;
+}
+
+.review-dots span.active {
+  width: 25px;
+  border-radius: 10px;
+  background: #c9a66b;
+}
+
+@media(max-width:767px) {
+  .review-slider {
+    height: 480px;
+  }
+
+  .review-card {
+    flex-direction: column;
+  }
+
+  .review-card img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .review-content {
+    padding: 20px 25px;
+  }
+
+  .review-content h3 {
+    font-size: 21px;
+  }
+}
+
+/* LOCATION */
+
+.location-grid {
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:40px;
+ align-items:center;
+}
+
+.location-image img {
+ width:100%;
+ height:400px;
+ object-fit:cover;
+}
+
+.location-info h2 {
+ font:600 43px 'Playfair Display',serif;
+ color:var(--green);
+ margin:15px 0;
+}
+
+.location-info p {
+ font-size:14px;
+ line-height:2;
+ color:#777;
+ margin-bottom:15px;
+}
+
+/* FOOTER */
+
+footer {
+ background:var(--dark);
+ color:white;
+ padding:55px 0 25px;
+ text-align:center;
+}
+
+footer .logo {margin-bottom:15px}
+
+footer p {
+ color:#bbb;
+ font-size:13px;
+ line-height:2;
+}
+
+.social {
+ display:flex;
+ justify-content:center;
+ gap:25px;
+ margin:25px 0;
+ font-size:13px;
+ color:var(--gold);
+}
+
+.copyright {
+ border-top:1px solid #ffffff25;
+ padding-top:20px;
+ margin-top:25px;
+ font-size:11px;
+ color:#aaa;
+}
+
+
+  
+/* CUSTOMER TESTIMONIAL */
+
+.testimonials {
+ background:#f7f3e9;
+ padding:100px 0;
+}
+
+.testimonial-grid {
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:25px;
+}
+
+.testimonial-card {
+ background:#fff;
+ padding:32px 27px;
+ border:1px solid #e9e1d3;
+ transition:.3s;
+}
+
+.testimonial-card:hover {
+ transform:translateY(-6px);
+ box-shadow:0 15px 35px #173d3212;
+}
+
+.stars {
+ color:#c9a66b;
+ font-size:19px;
+ letter-spacing:4px;
+ margin-bottom:20px;
+}
+
+.testimonial-card blockquote {
+ font:italic 17px/1.8 'Playfair Display',serif;
+ color:#46544b;
+ margin-bottom:25px;
+}
+
+.customer {
+ display:flex;
+ align-items:center;
+ gap:13px;
+ border-top:1px solid #eee8dd;
+ padding-top:20px;
+}
+
+.customer-avatar {
+ width:43px;
+ height:43px;
+ border-radius:50%;
+ background:#173d32;
+ color:#c9a66b;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ font:20px 'Playfair Display',serif;
+}
+
+.customer-info strong {
+ display:block;
+ font-size:13px;
+ color:#173d32;
+}
+
+.customer-info span {
+ font-size:11px;
+ color:#999;
+}
+
+@media(max-width:768px) {
+ .testimonial-grid {
+  grid-template-columns:1fr;
+ }
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px) {
+
+ .menu-toggle {display:block}
+
+ .nav-links {
+ display:none;
+ position:absolute;
+ top:65px;
+ left:0;
+ width:100%;
+ background:var(--dark);
+ flex-direction:column;
+ padding:25px;
+ }
+
+ .nav-links.active {display:flex}
+
+ .hero {min-height:680px}
+
+ .hero h1 {font-size:58px}
+
+ .about-grid,
+ .location-grid {grid-template-columns:1fr}
+
+ .menu-grid {grid-template-columns:1fr}
+
+ .about-image img {height:350px}
+
+ section {padding:70px 0}
+
+ .section-title h2 {font-size:37px}
+
+ .about-text h2,
+ .location-info h2 {font-size:36px}
+}
+
+  .location-image {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.location-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.location-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity .8s ease, transform .8s ease;
+}
+
+.location-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.location-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.location-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 9px;
+  z-index: 5;
+}
+
+.location-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.5);
+  transition: .3s;
+}
+
+.location-dots span.active {
+  width: 25px;
+  border-radius: 10px;
+  background: var(--gold);
+}
+
+@media (max-width: 767px) {
+  .location-image {
+    height: 300px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+<div class="container navbar">
+
+<a href="#home" class="logo">
+  <img src="logo-au-pho.png" alt="AU PHO Logo">
+
+  <div class="logo-text">
+    <span>Au Pho</span>
+    <small>VIETNAMESE DINING</small>
+  </div>
+</a>
+  
+ <button class="menu-toggle" onclick="toggleMenu()">MENU</button>
+
+ <ul class="nav-links" id="navLinks">
+  <li><a href="#home" onclick="closeMenu()">Beranda</a></li>
+  <li><a href="#about" onclick="closeMenu()">Tentang Kami</a></li>
+  <li><a href="#menu" onclick="closeMenu()">Menu</a></li>
+  <li><a href="#location" onclick="closeMenu()">Lokasi</a></li>
+  <li><a href="#contact" onclick="closeMenu()">Kontak</a></li>
+ </ul>
+
+</div>
+</nav>
+
+<!-- HERO -->
+
+<header class="hero" id="home">
+<div class="container hero-content">
+
+ <div class="eyebrow">Authentic Vietnamese Cuisine</div>
+
+ <h1>A Taste of<br>Vietnam.</h1>
+
+ <p>
+ Selamat datang di AU PHO.
+ Nikmati pengalaman kuliner khas Vietnam
+ dengan cita rasa istimewa, bahan segar,
+ dan suasana yang hangat.
+ </p>
+
+ <a href="#menu" class="btn">EXPLORE OUR MENU</a>
+
+</div>
+</header>
+
+<!-- ABOUT -->
+
+<section id="about">
+<div class="container about-grid">
+
+
+ <div class="about-text">
+
+  <div class="eyebrow">OUR STORY</div>
+
+  <h2>More Than Just A Bowl.</h2>
+
+  <p>
+  AU PHO hadir membawa inspirasi kekayaan
+  kuliner Vietnam ke dalam pengalaman
+  bersantap yang modern dan elegan.
+  </p>
+
+  <p>
+  Kami percaya bahwa makanan bukan sekadar
+  hidangan, tetapi juga sebuah pengalaman.
+  Mulai dari bahan pilihan, racikan penuh
+  perhatian, hingga keramahan dalam setiap
+  pelayanan.
+  </p>
+
+  <p>
+  Setiap kunjungan adalah kesempatan untuk
+  menikmati rasa, berbagi cerita, dan
+  menciptakan kenangan.
+  </p>
+
+ </div>
+
+</div>
+</section>
+
+<!-- MENU -->
+
+<section class="menu-section" id="menu">
+<div class="container">
+
+ <div class="section-title">
+  <span>OUR SPECIALITIES</span>
+  <h2>Discover Our Menu</h2>
+  <p>
+   Jelajahi pilihan hidangan dengan inspirasi
+   cita rasa khas Vietnam.
+  </p>
+ </div>
+
+ <div class="menu-grid">
+
+  <div class="menu-card">
+   <img src="menu1.jpg" alt="Beef Pho">
+   <div class="menu-info">
+    <h3>Au Pho</h3>
+    <p>
+     Mi beras dengan kuah hangat,
+     irisan daging sapi, dan pelengkap
+     herba segar. (kwetiauw,Beef slice,Bakso,Sengkel,Tulang iga)
+    </p>
+   </div>
+  </div>
+
+  <div class="menu-card">
+   <img src="menu2.png" alt="Spring Rolls">
+   <div class="menu-info">
+    <h3>Cakwe Fresh</h3>
+    <p>
+      Cakwe dengan tekstur renyah di luar dan empuk di dalam. Gurih, lezat, dan nikmat disantap selagi hangat! bersama Au Pho dan saus khas.
+    </p>
+   </div>
+  </div>
+
+  <div class="menu-card">
+   <img src="menu3.webp" alt="Vietnamese Bowl">
+   <div class="menu-info">
+    <h3>Spring Roll</h3>
+    <p>
+     Perpaduan Ayam cingcang,soun ,dan sayuran segar, berlapis jadi satu ke nikmatan 
+
+    </p>
+   </div>
+  </div>
+
+ </div>
+</div>
+</section>
+
+<!-- EXPERIENCE -->
+
+<section class="experience">
+<div class="container">
+
+ <div class="eyebrow">THE AU PHO EXPERIENCE</div>
+
+ <h2>Fresh Ingredients.<br>Beautiful Moments.</h2>
+
+ <p>
+ Kami menghadirkan perpaduan rasa,
+ suasana, dan keramahan untuk menjadikan
+ setiap momen bersantap lebih berkesan.
+ </p>
+
+</div>
+</section>
+
+
+<!-- CUSTOMER TESTIMONIAL -->
+
+<section id="reviews">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">CUSTOMER STORIES</div>
+      <h2>What They Say About Us.</h2>
+      <p>Every visit, a story worth sharing.</p>
+    </div>
+
+    <div class="review-slider">
+
+      <div class="review-card active">
+        <img src="review-1.jpg" alt="Pelanggan AU PHO">
+        <div class="review-content">
+          <div class="review-stars">★★★★★</div>
+          <h3>Faisal</h3>
+          <p>"Tempatnya nyaman, makanan enak dan pelayanan sangat ramah. Terimakasih pengalaman makan dengan citarasa yg berbeda dari yg lain 🥰"</p>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <img src="review-2.jpg" alt="Pelanggan AU PHO">
+        <div class="review-content">
+          <div class="review-stars">★★★★★</div>
+          <h3>Ubir</h3>
+          <p>"Rasa makanannya autentik, suasananya elegan vintage pokonya pengalaman kuliner berbeda di Jatinagor 🤙"</p>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <img src="review-3.jpg" alt="Pelanggan AU PHO">
+        <div class="review-content">
+          <div class="review-stars">★★★★★</div>
+          <h3>Ari magnar</h3>
+          <p>"Pokonamah madep warga indonesia Wajib merapat ke jatinagor buat rasain enaknya pho "</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="review-dots">
+      <span class="active"></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</section>
+  
+
+<!-- LOCATION -->
+
+<section id="location">
+<div class="container location-grid">
+
+ <div class="location-info">
+
+  <div class="eyebrow">VISIT US</div>
+
+  <h2>Your Table Is Waiting.</h2>
+
+  <p>
+  Kami menantikan kesempatan untuk
+  menyambut Anda di AU PHO.
+  Nikmati pengalaman kuliner Vietnam
+  bersama keluarga dan orang terdekat.
+  </p>
+
+  <p><strong>Alamat:</strong><br>Jl. Raya Jatinangor No.145, Cikeruh, Kec. Jatinangor, Kabupaten Sumedang, Jawa Barat 45363
+  </p>
+
+  <p><strong>Jam Operasional:</strong><br>
+  10:00 WIB - 20:00 WIB </p>
+
+  <p><strong>WhatsApp:</strong><br>0821-1517-9523
+  </p>
+
+  <a href="https://wa.me/6282115179523"
+     class="btn" target="_blank">
+     HUBUNGI KAMI
+  </a>
+
+ </div>
+
+ <div class="location-image">
+  <div class="location-slider">
+
+    <div class="location-slide active">
+      <img src="resto1.jpg" alt="Interior AU PHO">
+    </div>
+
+    <div class="location-slide">
+      <img src="resto2.jpg" alt="Suasana AU PHO">
+    </div>
+
+    <div class="location-slide">
+      <img src="resto3.jpg" alt="Area restoran AU PHO">
+    </div>
+
+    <div class="location-slide">
+      <img src="resto4.jpg" alt="Dining AU PHO">
+    </div>
+
+  </div>
+
+  <div class="location-dots">
+    <span class="active"></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contact">
+<div class="container">
+
+ <div class="logo">
+  AU PHO
+  <span>VIETNAMESE DINING</span>
+ </div>
+
+ <p>
+ A little taste of Vietnam,<br>
+ served with warmth.
+ </p>
+
+ <div class="social">
+  <a href="https://instagram.com/">Instagram</a>
+  <a href="https://facebook.com/">Facebook</a>
+  <a href="https://wa.me/6282115179523">WhatsApp</a>
+ </div>
+
+ <div class="copyright">
+  © 2026 AU PHO. All Rights Reserved.
+ </div>
+
+</div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navLinks")
+    .classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("navLinks")
+    .classList.remove("active");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const slides = document.querySelectorAll(".location-slide");
+  const dots = document.querySelectorAll(".location-dots span");
+
+  if (slides.length <= 1) return;
+
+  let current = 0;
+
+  function showSlide(index) {
+    slides[current].classList.remove("active");
+
+    if (dots[current]) {
+      dots[current].classList.remove("active");
+    }
+
+    current = index;
+
+    slides[current].classList.add("active");
+
+    if (dots[current]) {
+      dots[current].classList.add("active");
+    }
+  }
+
+  setInterval(function () {
+    let next = (current + 1) % slides.length;
+    showSlide(next);
+  }, 3000);
+});
+</script>
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const reveals = document.querySelectorAll(
+    "section h2, section .eyebrow, section p, section .menu-card"
+  );
+
+  reveals.forEach(element => {
+    element.classList.add("reveal");
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  reveals.forEach(element => observer.observe(element));
+
+});
+
+const reviewCards = document.querySelectorAll(".review-card");
+const reviewDots = document.querySelectorAll(".review-dots span");
+
+let currentReview = 0;
+
+function showReview(index) {
+  reviewCards[currentReview].classList.remove("active");
+  reviewDots[currentReview].classList.remove("active");
+
+  currentReview = index;
+
+  reviewCards[currentReview].classList.add("active");
+  reviewDots[currentReview].classList.add("active");
+}
+
+if (reviewCards.length > 1) {
+  setInterval(() => {
+    showReview((currentReview + 1) % reviewCards.length);
+  }, 4000);
+}
+
+
+    
+</script>
+
+</body>
+</html>
